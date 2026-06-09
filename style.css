@@ -1,166 +1,404 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+body{
+background:#fff8fb;
+min-height:100vh;
+overflow-x:hidden;
+position:relative;
+}
 
-<title>Nivra Size Finder</title>
+/* الخلفية */
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+.bg{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top right,#ffd6e4 0%,transparent 35%),
+radial-gradient(circle at bottom left,#ffe7f0 0%,transparent 35%),
+#fff8fb;
+z-index:-2;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+/* الفقاعات */
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+.bubbles{
+position:fixed;
+inset:0;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
 
-<link rel="stylesheet" href="style.css">
-</head>
+.bubbles span{
+position:absolute;
+display:block;
+border-radius:50%;
+background:rgba(247,182,200,.35);
+backdrop-filter:blur(4px);
+animation:float 18s infinite linear;
+}
 
-<body>
+.bubbles span:nth-child(1){
+width:120px;
+height:120px;
+left:10%;
+top:15%;
+}
 
-<!-- الخلفية -->
-<div class="bg"></div>
+.bubbles span:nth-child(2){
+width:80px;
+height:80px;
+left:20%;
+bottom:10%;
+}
 
-<!-- الفقاعات -->
-<div class="bubbles">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
+.bubbles span:nth-child(3){
+width:150px;
+height:150px;
+right:10%;
+top:10%;
+}
 
-<div class="container">
+.bubbles span:nth-child(4){
+width:60px;
+height:60px;
+right:20%;
+bottom:15%;
+}
 
-<div class="card">
+.bubbles span:nth-child(5){
+width:100px;
+height:100px;
+left:45%;
+top:8%;
+}
 
-<div class="brand">
-<h1>Nivra</h1>
-<p>مساعد ذكي لاختيار القياس المناسب</p>
-</div>
+.bubbles span:nth-child(6){
+width:70px;
+height:70px;
+left:60%;
+bottom:10%;
+}
 
-<div class="grid">
+.bubbles span:nth-child(7){
+width:130px;
+height:130px;
+right:35%;
+top:40%;
+}
 
-<input
-id="height"
-type="number"
-placeholder="الطول (سم) *">
+.bubbles span:nth-child(8){
+width:50px;
+height:50px;
+left:75%;
+top:70%;
+}
 
-<input
-id="weight"
-type="number"
-placeholder="الوزن (كغم) *">
+@keyframes float{
 
-<input
-id="chest"
-type="number"
-placeholder="محيط الصدر (اختياري)">
+0%{
+transform:translateY(0px);
+}
 
-<input
-id="waist"
-type="number"
-placeholder="محيط الخصر (اختياري)">
+50%{
+transform:translateY(-30px);
+}
 
-</div>
+100%{
+transform:translateY(0px);
+}
 
-<button class="main-btn" onclick="calculateSize()">
-<i class="fa-solid fa-ruler-combined"></i>
-اعرفي مقاسي
-</button>
+}
 
-<!-- النتيجة -->
-<div id="result" class="result hidden"></div>
+/* الحاوية */
 
-<!-- مشاركة النتيجة -->
-<div id="shareSection" class="share-section hidden">
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:25px;
+}
 
-<h3>
-<i class="fa-solid fa-paper-plane"></i>
-إرسال النتيجة
-</h3>
+/* الكارد */
 
-<div class="share-grid">
+.card{
+width:100%;
+max-width:700px;
 
-<a
-id="shareWhatsapp"
-target="_blank"
-class="share-btn whatsapp">
+background:rgba(255,255,255,.82);
 
-<i class="fab fa-whatsapp"></i>
-واتساب
+backdrop-filter:blur(18px);
 
-</a>
+border:1px solid rgba(255,255,255,.5);
 
-<a
-id="shareInstagram"
-target="_blank"
-class="share-btn instagram">
+border-radius:30px;
 
-<i class="fab fa-instagram"></i>
-انستغرام
+padding:35px;
 
-</a>
+box-shadow:
+0 20px 50px rgba(212,107,145,.12),
+0 5px 20px rgba(0,0,0,.05);
+}
 
-<a
-id="shareTiktok"
-target="_blank"
-class="share-btn tiktok">
+/* العنوان */
 
-<i class="fab fa-tiktok"></i>
-تيك توك
+.brand h1{
+text-align:center;
+font-size:42px;
+font-weight:800;
+color:#d46b91;
+}
 
-</a>
+.brand p{
+text-align:center;
+color:#777;
+margin-top:8px;
+margin-bottom:25px;
+}
 
-</div>
+/* الحقول */
 
-</div>
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
 
-<!-- روابط البراند -->
+input{
+padding:15px;
+border-radius:16px;
+border:1px solid #ead9df;
+font-size:16px;
+outline:none;
+transition:.3s;
+background:white;
+}
 
-<div class="socials">
+input:focus{
 
-<a
-href="https://www.instagram.com/nivra.iq?igsh=bWE3dTJwajV5bnB5&utm_source=qr"
-target="_blank"
-class="social-btn instagram">
+border-color:#d46b91;
 
-<i class="fab fa-instagram"></i>
-Instagram
+box-shadow:
+0 0 0 4px rgba(212,107,145,.12);
 
-</a>
+transform:translateY(-2px);
 
-<a
-href="https://wa.me/message/VZ75ZZBY6H47O1"
-target="_blank"
-class="social-btn whatsapp">
+}
 
-<i class="fab fa-whatsapp"></i>
-WhatsApp
+/* زر الحساب */
 
-</a>
+.main-btn{
 
-<a
-href="https://www.tiktok.com/@nivra.iq?_r=1&_t=ZS-973Wr9i5ZWH"
-target="_blank"
-class="social-btn tiktok">
+width:100%;
 
-<i class="fab fa-tiktok"></i>
-TikTok
+margin-top:18px;
 
-</a>
+padding:16px;
 
-</div>
+border:none;
 
-</div>
+border-radius:16px;
 
-</div>
+background:#f7b6c8;
 
-<script src="script.js"></script>
+color:#fff;
 
-</body>
-</html>
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.main-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 12px 30px rgba(212,107,145,.25);
+
+}
+
+/* النتيجة */
+
+.result{
+
+margin-top:22px;
+
+padding:25px;
+
+background:#fff2f6;
+
+border-radius:20px;
+
+border:1px solid #ffd8e5;
+}
+
+.result-card{
+text-align:center;
+}
+
+.result-card h2{
+color:#d46b91;
+margin-bottom:15px;
+}
+
+.size-box{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:18px;
+}
+
+.size-letter{
+
+font-size:46px;
+
+font-weight:800;
+
+color:#d46b91;
+}
+
+.size-number{
+
+background:#f7b6c8;
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:14px;
+
+font-size:26px;
+
+font-weight:700;
+}
+
+.note{
+
+line-height:1.9;
+
+font-size:15px;
+
+color:#666;
+}
+
+/* مشاركة النتيجة */
+
+.share-section{
+margin-top:20px;
+}
+
+.share-section h3{
+text-align:center;
+margin-bottom:15px;
+color:#d46b91;
+}
+
+.share-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+}
+
+/* روابط البراند */
+
+.socials{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+margin-top:25px;
+}
+
+.social-btn,
+.share-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
+
+text-decoration:none;
+
+padding:14px;
+
+border-radius:16px;
+
+font-weight:700;
+
+color:white;
+
+transition:.3s;
+}
+
+.social-btn:hover,
+.share-btn:hover{
+
+transform:translateY(-3px);
+}
+
+.instagram{
+background:linear-gradient(
+45deg,
+#833AB4,
+#E1306C,
+#F77737
+);
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.tiktok{
+background:#111111;
+}
+
+/* إخفاء */
+
+.hidden{
+display:none;
+}
+
+/* موبايل */
+
+@media(max-width:600px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.share-grid{
+grid-template-columns:1fr;
+}
+
+.brand h1{
+font-size:34px;
+}
+
+.card{
+padding:25px;
+}
+
+}
