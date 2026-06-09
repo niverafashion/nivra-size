@@ -70,7 +70,7 @@ placeholder="محيط الخصر (اختياري)">
 
 <button class="main-btn" onclick="calculateSize()">
 <i class="fa-solid fa-ruler-combined"></i>
-اعرفي مقاسي
+اكتشف القياس المناسب
 </button>
 
 <!-- النتيجة -->
@@ -82,7 +82,7 @@ id="openShareModal"
 class="share-result-btn hidden">
 
 <i class="fa-solid fa-share-nodes"></i>
-مشاركة النتيجة
+ مشاركة المقاس مع نيفرا
 
 </button>
 
@@ -99,9 +99,14 @@ class="share-result-btn hidden">
 
 <div class="modal-buttons">
 
+<a href="#" id="copySizeResult" class="modal-btn copy-btn" onclick="copySizeResult()">
+    <i class="fas fa-copy"></i>
+    نسخ القياس الخاص بي
+</a>
+  
 <a id="shareWhatsapp" target="_blank" class="modal-btn whatsapp">
 <i class="fab fa-whatsapp"></i>
-واتساب
+ارسال مباشر عبر واتساب
 </a>
 
 <a id="shareInstagram" target="_blank" class="modal-btn instagram">
@@ -130,7 +135,7 @@ target="_blank"
 class="social-btn instagram">
 
 <i class="fab fa-instagram"></i>
-Instagram
+ تواصل معنا عبر Instagram
 
 </a>
 
@@ -140,7 +145,7 @@ target="_blank"
 class="social-btn whatsapp">
 
 <i class="fab fa-whatsapp"></i>
-WhatsApp
+ تواصل معنا عبر WhatsApp
 
 </a>
 
@@ -150,8 +155,7 @@ target="_blank"
 class="social-btn tiktok">
 
 <i class="fab fa-tiktok"></i>
-TikTok
-
+تواصل معنا عبر Tik Tok
 </a>
 
 </div>
