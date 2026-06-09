@@ -113,10 +113,9 @@ const encodedMessage = encodeURIComponent(message);
 
 /* إظهار قسم المشاركة */
 
-const shareSection =
-document.getElementById("shareSection");
-
-shareSection.classList.remove("hidden");
+document
+.getElementById("openShareModal")
+.classList.remove("hidden");
 
 /* واتساب */
 
@@ -132,5 +131,36 @@ document.getElementById("shareInstagram").href =
 
 document.getElementById("shareTiktok").href =
 "https://www.tiktok.com/@nivra.iq?_r=1&_t=ZS-973Wr9i5ZWH";
+
+const modal =
+document.getElementById("shareModal");
+
+const openBtn =
+document.getElementById("openShareModal");
+
+const closeBtn =
+document.querySelector(".close-modal");
+
+openBtn.onclick = () => {
+
+modal.style.display = "flex";
+
+};
+
+closeBtn.onclick = () => {
+
+modal.style.display = "none";
+
+};
+
+window.onclick = (e) => {
+
+if(e.target === modal){
+
+modal.style.display = "none";
+
+}
+
+};
 
 }
