@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nivra Size Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+  <div class="card">
+    <h1>✨ Nivra Size Pro</h1>
+    <p>مساعد ذكي لاختيار المقاس المناسب</p>
+
+    <div class="grid">
+      <input id="height" type="number" placeholder="الطول (سم) *">
+      <input id="weight" type="number" placeholder="الوزن (كغم) *">
+      <input id="chest" type="number" placeholder="محيط الصدر (اختياري)">
+      <input id="waist" type="number" placeholder="محيط الخصر (اختياري)">
+    </div>
+
+    <button onclick="calculateSize()">اعرفي مقاسي</button>
+
+    <div id="result" class="result hidden"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

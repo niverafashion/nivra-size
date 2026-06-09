@@ -1,0 +1,12 @@
+*{box-sizing:border-box}body{font-family:Cairo,sans-serif;margin:0;background:#fffafc;min-height:100vh}
+.bg{position:fixed;inset:0;background:linear-gradient(135deg,#fff,#f7b6c8 200%);z-index:-1}
+.container{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.card{width:100%;max-width:650px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);padding:30px;border-radius:28px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+h1{text-align:center;color:#d46b91;margin-bottom:5px}p{text-align:center;color:#666}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+input{padding:14px;border-radius:14px;border:1px solid #e4d8de;font-size:16px}
+button{width:100%;margin-top:15px;padding:15px;border:none;border-radius:14px;background:#f7b6c8;font-size:18px;font-weight:700;cursor:pointer}
+button:hover{transform:translateY(-1px)}
+.result{margin-top:20px;padding:20px;border-radius:18px;background:#fff0f5}
+.badge{display:inline-block;padding:8px 14px;border-radius:999px;background:#f7b6c8;font-weight:700}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
