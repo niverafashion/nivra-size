@@ -77,44 +77,44 @@ placeholder="محيط الخصر (اختياري)">
 <div id="result" class="result hidden"></div>
 
 <!-- مشاركة النتيجة -->
-<div id="shareSection" class="share-section hidden">
+<button
+id="openShareModal"
+class="share-result-btn hidden">
+
+<i class="fa-solid fa-share-nodes"></i>
+مشاركة النتيجة
+
+</button>
+
+<div id="shareModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-modal">&times;</span>
 
 <h3>
 <i class="fa-solid fa-paper-plane"></i>
-إرسال النتيجة
+مشاركة النتيجة
 </h3>
 
-<div class="share-grid">
+<div class="modal-buttons">
 
-<a
-id="shareWhatsapp"
-target="_blank"
-class="share-btn whatsapp">
-
+<a id="shareWhatsapp" target="_blank" class="modal-btn whatsapp">
 <i class="fab fa-whatsapp"></i>
 واتساب
-
 </a>
 
-<a
-id="shareInstagram"
-target="_blank"
-class="share-btn instagram">
-
+<a id="shareInstagram" target="_blank" class="modal-btn instagram">
 <i class="fab fa-instagram"></i>
 انستغرام
-
 </a>
 
-<a
-id="shareTiktok"
-target="_blank"
-class="share-btn tiktok">
-
+<a id="shareTiktok" target="_blank" class="modal-btn tiktok">
 <i class="fab fa-tiktok"></i>
 تيك توك
-
 </a>
+
+</div>
 
 </div>
 
