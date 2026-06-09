@@ -79,15 +79,15 @@ result.innerHTML = `
 
     <div class="size-box">
 
-        <span class="size-letter">
-            ${sizes[idx]}
-        </span>
-
-        <span class="size-number">
-            ${nums[idx]}
-        </span>
-
+    <div class="size-letter">
+        ${sizes[idx]}<br>
     </div>
+
+    <div class="size-number">
+        القياس الرقمي: ${nums[idx]}
+    </div>
+
+</div>
 
     <p class="note">
         تم احتساب النتيجة اعتماداً على الطول والوزن بشكل أساسي،
@@ -99,7 +99,7 @@ result.innerHTML = `
 
 /* الرسالة الجاهزة */
 
-const message =
+globalMessage =
 `مرحباً 🌸
 
 القياس المقترح لي من Nivra Size Finder:
@@ -109,18 +109,16 @@ const message =
 
 شكراً لكم 🤍`;
 
-const encodedMessage = encodeURIComponent(message);
+const encodedMessage = encodeURIComponent(globalMessage);
 
 /* إظهار قسم المشاركة */
+document.getElementById("openShareModal").classList.remove("hidden");
 
-document
-.getElementById("openShareModal")
-.classList.remove("hidden");
 
 /* واتساب */
 
 document.getElementById("shareWhatsapp").href =
-`https://wa.me/?text=${encodedMessage}`;
+`https://wa.me/9647741478145?text=${encodedMessage}`;
 
 /* انستغرام */
 
@@ -163,4 +161,16 @@ modal.style.display = "none";
 
 };
 
+}
+let globalMessage = "";
+function copySizeResult() {
+
+    if (!globalMessage) {
+        alert("لا توجد نتيجة لنسخها");
+        return;
+    }
+
+    navigator.clipboard.writeText(globalMessage)
+        .then(() => alert("تم نسخ القياس بنجاح"))
+        .catch(() => alert("فشل النسخ"));
 }
