@@ -275,16 +275,12 @@ margin-bottom:15px;
 }
 
 .size-box{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:12px;
-
-margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
 }
 
 .size-letter{
@@ -294,6 +290,7 @@ font-size:46px;
 font-weight:800;
 
 color:#d46b91;
+
 }
 
 .size-number{
@@ -397,7 +394,24 @@ background:#25D366;
 .tiktok{
 background:#111111;
 }
+.copy-btn {
+    background: #4a90e2; /* أزرق حلو للنسخ */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s;
+}
 
+.copy-btn:hover {
+    background: #2f6fb8;
+    transform: scale(1.03);
+}
+
+.copy-btn i {
+    font-size: 16px;
+}
 /* إخفاء */
 
 .hidden{
