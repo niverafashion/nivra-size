@@ -1,31 +1,166 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nivra Size Pro</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nivra Size Finder</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<!-- الخلفية -->
 <div class="bg"></div>
-<div class="container">
-  <div class="card">
-    <h1>✨ Nivra Size Pro</h1>
-    <p>مساعد ذكي لاختيار المقاس المناسب</p>
 
-    <div class="grid">
-      <input id="height" type="number" placeholder="الطول (سم) *">
-      <input id="weight" type="number" placeholder="الوزن (كغم) *">
-      <input id="chest" type="number" placeholder="محيط الصدر (اختياري)">
-      <input id="waist" type="number" placeholder="محيط الخصر (اختياري)">
-    </div>
-
-    <button onclick="calculateSize()">اعرفي مقاسي</button>
-
-    <div id="result" class="result hidden"></div>
-  </div>
+<!-- الفقاعات -->
+<div class="bubbles">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
 </div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="brand">
+<h1>Nivra</h1>
+<p>مساعد ذكي لاختيار القياس المناسب</p>
+</div>
+
+<div class="grid">
+
+<input
+id="height"
+type="number"
+placeholder="الطول (سم) *">
+
+<input
+id="weight"
+type="number"
+placeholder="الوزن (كغم) *">
+
+<input
+id="chest"
+type="number"
+placeholder="محيط الصدر (اختياري)">
+
+<input
+id="waist"
+type="number"
+placeholder="محيط الخصر (اختياري)">
+
+</div>
+
+<button class="main-btn" onclick="calculateSize()">
+<i class="fa-solid fa-ruler-combined"></i>
+اعرفي مقاسي
+</button>
+
+<!-- النتيجة -->
+<div id="result" class="result hidden"></div>
+
+<!-- مشاركة النتيجة -->
+<div id="shareSection" class="share-section hidden">
+
+<h3>
+<i class="fa-solid fa-paper-plane"></i>
+إرسال النتيجة
+</h3>
+
+<div class="share-grid">
+
+<a
+id="shareWhatsapp"
+target="_blank"
+class="share-btn whatsapp">
+
+<i class="fab fa-whatsapp"></i>
+واتساب
+
+</a>
+
+<a
+id="shareInstagram"
+target="_blank"
+class="share-btn instagram">
+
+<i class="fab fa-instagram"></i>
+انستغرام
+
+</a>
+
+<a
+id="shareTiktok"
+target="_blank"
+class="share-btn tiktok">
+
+<i class="fab fa-tiktok"></i>
+تيك توك
+
+</a>
+
+</div>
+
+</div>
+
+<!-- روابط البراند -->
+
+<div class="socials">
+
+<a
+href="https://www.instagram.com/nivra.iq?igsh=bWE3dTJwajV5bnB5&utm_source=qr"
+target="_blank"
+class="social-btn instagram">
+
+<i class="fab fa-instagram"></i>
+Instagram
+
+</a>
+
+<a
+href="https://wa.me/message/VZ75ZZBY6H47O1"
+target="_blank"
+class="social-btn whatsapp">
+
+<i class="fab fa-whatsapp"></i>
+WhatsApp
+
+</a>
+
+<a
+href="https://www.tiktok.com/@nivra.iq?_r=1&_t=ZS-973Wr9i5ZWH"
+target="_blank"
+class="social-btn tiktok">
+
+<i class="fab fa-tiktok"></i>
+TikTok
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 <script src="script.js"></script>
+
 </body>
 </html>
